@@ -1,0 +1,12 @@
+@import "../../../styles/colors";
+
+.post {
+  margin-bottom: 16px;
+  padding: 16px;
+
+  background-color: $light-gray;
+  color: white;
+  border-radius: 4px;
+
+  cursor: pointer;
+}

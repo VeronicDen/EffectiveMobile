@@ -1,0 +1,7 @@
+<div class="container full-page">
+  <div class="inner-container">
+    <div class="post" *ngFor="let post of posts" (click)="getPost(post.id)" >
+      <app-post [post]="post"></app-post>
+    </div>
+  </div>
+</div>

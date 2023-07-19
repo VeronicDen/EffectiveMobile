@@ -1,0 +1,22 @@
+@import "../../../styles/colors";
+
+.post {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 16px;
+  padding: 24px;
+
+  background-color: $dark-gray;
+  color: white;
+  border-radius: 4px;
+
+  cursor: pointer;
+
+  button:last-of-type {
+    align-self: flex-end;
+    margin-top: 16px;
+    color: $text-gray !important;
+    font-size: 12px;
+  }
+}

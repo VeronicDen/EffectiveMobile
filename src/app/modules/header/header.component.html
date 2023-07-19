@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="inner-container">
+    <p>{{getUserName()}}</p>
+    <button mat-raised-button color="primary" (click)="changeState()">
+      {{currentStateService.isUserLoggedIn() ? 'Выйти' : 'Войти'}}
+    </button>
+  </div>
+</div>

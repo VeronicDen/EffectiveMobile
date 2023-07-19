@@ -1,0 +1,8 @@
+
+<div *ngIf="post, else progress">
+  <p class="title">{{post.title}}</p>
+  <p class="body">{{post.body}}</p>
+</div>
+<ng-template #progress>
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</ng-template>

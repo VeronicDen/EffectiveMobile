@@ -1,0 +1,35 @@
+<div class="container full-page">
+  <form [formGroup]="formGroup">
+    <p class="error">{{errorMessage}}</p>
+    <mat-form-field>
+      <mat-label>Логин</mat-label>
+      <input matInput placeholder="user123" formControlName="login" required>
+      <mat-error *ngIf="formGroup.controls['login'].invalid">Логин обязателен</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Пароль</mat-label>
+      <input matInput [type]="hide[0] ? 'password' : 'text'" formControlName="password" required>
+      <button mat-icon-button matSuffix (click)="hide[0] = !hide[0]" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide[0]">
+        <mat-icon>{{hide[0] ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="formGroup.controls['password'].invalid">Пароль обязателен и должен быть больше 3 символов</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Пароль</mat-label>
+      <input matInput [type]="hide[1] ? 'password' : 'text'" formControlName="confirmPassword" required>
+      <button mat-icon-button matSuffix (click)="hide[1] = !hide[1]" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide[1]">
+        <mat-icon>{{hide[1] ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="formGroup.controls['confirmPassword'].invalid">Пароли должны совпадать</mat-error>
+    </mat-form-field>
+
+    <button type="button" mat-raised-button color="primary" (click)="userRegistration()">Зарегистрироваться</button>
+
+    <p>Вы уже зарегистрированы?</p>
+    <button type="button" mat-raised-button (click)="goToAuthorization()">Войти</button>
+
+    <button type="button" mat-button (click)="goToMain()">Вернуться на главную страницу</button>
+  </form>
+</div>
